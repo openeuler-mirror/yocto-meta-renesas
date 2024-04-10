@@ -6,7 +6,7 @@ inherit native
 
 DEPENDS = "openssl-native"
 
-S = "${WORKDIR}/rzg_trusted-firmware-a"
+S = "${WORKDIR}/fiptool"
 
 do_configure () {
 	sed -i '/^LDLIBS/ s,$, \$\{BUILD_LDFLAGS},' ${S}/tools/fiptool/Makefile

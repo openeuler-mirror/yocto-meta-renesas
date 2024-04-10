@@ -4,24 +4,9 @@ PV = "1.06"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-#FLASH_WRITER_URL = "git://github.com/renesas-rz/rzg2_flash_writer"
-#BRANCH = "rz_g2l"
-
-#FLASH_WRITER_URL = "git://github.com/123markhong/yg2lx-flash_write.git"
-#BRANCH = "yg2lx_fw"
-#FLASH_WRITER_URL ="git://github.com/123markhong/myir-renesas_flash_writer.git"
-#BRANCH = "rz_g2l"
-FLASH_WRITER_URL ="git://github.com/MYiR-Dev/myir-renesas-flash-writer.git"
-BRANCH = "develop-remi-v1.06"
-
-
-# SRC_URI = "${FLASH_WRITER_URL};branch=${BRANCH}"
-OPENEULER_LOCAL_NAME = "myir-renesas-flash-writer"
 SRC_URI = " \
         file://myir-renesas-flash-writer \
 "
-
-SRCREV = "8cd973992da7cdc8646a498b81d1a1e4e9f74f20"
 
 inherit deploy
 #require include/provisioning.inc

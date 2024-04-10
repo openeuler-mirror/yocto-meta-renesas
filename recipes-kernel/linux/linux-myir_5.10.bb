@@ -6,44 +6,13 @@ require recipes-kernel/linux/linux-yocto.inc
 # require include/docker-control.inc
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}/:"
-#COMPATIBLE_MACHINE_rzg2l = "(smarc-rzg2l|smarc-rzg2lc|smarc-rzg2ul|smarc-rzv2l|rzv2l-dev)"
-#COMPATIBLE_MACHINE_rzg2h = "(ek874|hihope-rzg2n|hihope-rzg2m|hihope-rzg2h)"
-# COMPATIBLE_MACHINE_yg2lx = "(myir-yg2lx|myir-yg2lx-1g)"
-# COMPATIBLE_MACHINE_remi = "(myir-remi|myir-remi-1g)"
-COMPATIBLE_MACHINE = "myir-remi"
-
-#KERNEL_URL = " \
-#    git://github.com/renesas-rz/rz_linux-cip.git"
-
-#SRC_URI += "\
-#      git://github.com/123markhong/yg2lx-kernel.git;protocol=https;branch=master"
-#SRCREV= "96c21b36384abbc828f93ae5ea3edb1e55210082"
-
-#SRC_URI += "\
-#      git://github.com/123markhong/myir-renesas-linux.git;protocol=https;branch=develop-rz-L5.10.83"
-#SRCREV= "0218cba1bd7bf83c95fa7b942542d4251c6fe345"
-#SRCREV= "63e19f3ffb2ce335a11bfe057bd980a684629e34"
-#SRCREV = "195975536df5cf843dbe9c629f73ef839b04a199"
-
-# SRC_URI += "\
-#       git://github.com/MYiR-Dev/myir-renesas-linux.git;protocol=https;branch=develop-remi-L5.10.83"
-# SRCREV= "d795edc9d0ce69f4ff1ac914a7668f043d444cce"
 
 OPENEULER_LOCAL_NAME = "myir-renesas-linux"
 SRC_URI += "\
         file://myir-renesas-linux \
 "
 
-#SRC_URI += "\
-#      git:///home/hjx/renesas/04_Sources/new-source/myir-renesas-linux;protocol=file;branch=develop-rz-L5.10.83"
-#SRCREV= "38a409074d5b0107208e97be29103b11ae4b7196"
-
-#SRC_URI += "\
-#      git:///opt/hjx-source/renesas/remi-pi/sources/myir-renesas-linux;protocol=file;branch=develop-remi-L5.10.83"
-#SRCREV= "d795edc9d0ce69f4ff1ac914a7668f043d444cce"
-
 LINUX_VERSION = "5.10.83"
-
 
 SRC_URI += " \
     file://0001-arm64-dts-renesas-rzg2l-smarc-Add-uio-support.patch \
@@ -58,14 +27,7 @@ SRC_URI += " \
 # Kernel confguration update
 SRC_URI += "file://uio.cfg"
 
-
-
-#BRANCH = "${@oe.utils.conditional("IS_RT_BSP", "1", "rz-5.10-cip13-rt5", "rz-5.10-cip13",d)}"
-#SRCREV = "${@oe.utils.conditional("IS_RT_BSP", "1", "c8798f35184b8115f9aba9f972eb12ed3bb4e9e0", "61bbadb8a4b899371c83e1cbadd0a46ffd6ebb40",d)}"
-
-#SRC_URI = "${KERNEL_URL};protocol=https;nocheckout=1;branch=${BRANCH}"
 LIC_FILES_CHKSUM = "file://COPYING;md5=6bc538ed5bd9a7fc9398086aedcd7e46"
-#LINUX_VERSION ?= "${@oe.utils.conditional("IS_RT_BSP", "1", "5.10.131-cip13-rt5", "5.10.131-cip13",d)}"
 
 PV = "${LINUX_VERSION}"
 PR = "r1"
